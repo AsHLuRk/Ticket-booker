@@ -3,15 +3,15 @@ import java.util.*;
 
 public class Ticket {
      
-    private String ticketId;
+    private String ticket_id;
     
-    private String userID;
+    private String user_id;
 
     private String source;
 
     private String destination;
 
-    private Date Datetime;
+    private Date date_of_travel;
 
     private Train train;
 

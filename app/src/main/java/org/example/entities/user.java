@@ -7,10 +7,10 @@ public class user {
 
   private String password;
 
-  private String hashpassword;
+  private String hashed_password;
 
-  private List<Ticket> bookedticket;
+  private List<Ticket> tickets_booked;
 
-  private String user_ID;
+  private String user_id;
 
 }
