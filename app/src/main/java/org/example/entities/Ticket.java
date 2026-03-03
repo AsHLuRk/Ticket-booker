@@ -15,4 +15,9 @@ public class Ticket {
 
     private Train train;
 
+    private String ticket_info;
+
+    public String getTicket(){
+        return ticket_info;
+    }
 }

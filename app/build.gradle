@@ -23,6 +23,7 @@ dependencies {
     implementation libs.guava
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.0'
      implementation 'at.favre.lib:bcrypt:0.10.2' // Check Maven Repository for the latest version
+     implementation 'org.mindrot:jbcrypt:0.4'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
