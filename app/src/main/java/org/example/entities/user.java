@@ -53,6 +53,7 @@ public class user {
 
      for(int i =0; i<tickets_booked.size(); i++){
          System.out.println(tickets_booked.get(i).getTicket());
+         
      }
     }
     public void setPassword(String Password){

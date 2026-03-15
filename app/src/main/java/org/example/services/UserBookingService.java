@@ -18,17 +18,39 @@ import java.util.*;
 public class UserBookingService {
     
     private user User;
-    private static final String USER_PATH= "../LocalDB/users.json";
+    private static final String USER_PATH= "C:\\Users\\ADMIN\\Desktop\\dev\\Ticketbook\\app\\src\\main\\java\\org\\example\\LocalDB\\users.json";
     private List<user> userlists;
     private ObjectMapper objectMapper = new ObjectMapper();
+    private boolean loggedStatus;
 
     public UserBookingService(user User1) throws IOException{
         this.User = User1;
         
-        File users = new File(USER_PATH);
-        userlists = objectMapper.readValue(users, new TypeReference<List<user>>() {});
+         loaduser();
+
     }
 
+
+
+    public List<user> loaduser() throws IOException{
+        File users = new File(USER_PATH);
+        return  userlists = objectMapper.readValue(users, new TypeReference<List<user>>() {});
+    }
+    public void returnuser(String name1, String password1){
+        user usernew = userlists.stream().filter(e->e.getname().equals(name1)&& e.getPassword().equals(password1)).findFirst().orElse(null);
+        this.User = usernew;
+       
+    }
+    public void setloggedstatus(boolean status){
+        loggedStatus = status;
+    }
+    public boolean getloggedstatus(){
+        return loggedStatus;
+    }
+
+    public UserBookingService() throws IOException{
+        loaduser();
+    }
     public boolean userlogin(){
 
          Optional<user> founduser = userlists.stream().filter(User1-> {
@@ -53,7 +75,7 @@ public class UserBookingService {
 
     public void saveuserlisttofile() throws IOException{
         File userFile = new File(USER_PATH);
-
+        
         objectMapper.writeValue(userFile, userlists);
     }
 
