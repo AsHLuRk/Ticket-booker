@@ -1,5 +1,6 @@
 package org.example.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class user {
@@ -25,7 +26,9 @@ public class user {
      }
 
      //default constructor
-    public user(){}
+    public user(){
+      this.tickets_booked = new ArrayList<>();
+    }
 
     public String getname(){
       return name;
@@ -35,40 +38,40 @@ public class user {
       return password;
     }
 
-    public String gethashedpassword(){
+    public String gethashed_password(){
       return hashed_password;
     }
-    public List getTicketbooked(){
-      return tickets_booked;
-    }
+    public List<Ticket> getTickets_booked(){
+    return tickets_booked;
+}
 
-    public String getUserid(){
+    public String getUser_id(){
       return user_id;
     }
-    public void setName(String Name){
-      this.name  = Name;
+    public void setName(String name){
+      this.name  = name;
     }
 
     public void getticket(){
-
+     
      for(int i =0; i<tickets_booked.size(); i++){
          System.out.println(tickets_booked.get(i).getTicket());
          
      }
     }
-    public void setPassword(String Password){
+    public void setPassword(String password){
 
-      this.password = Password;
+      this.password = password;
     }
-    public void setHashedpassword(String Hashed_password){
-      this.hashed_password = Hashed_password;
+    public void setHashed_password(String hashed_password){
+      this.hashed_password = hashed_password;
     }
-   public void setUserid(String User_id){
-    this.user_id = User_id;
+   public void setUser_id(String user_id){
+    this.user_id = user_id;
    }
 
-   public void setTicketbooked(List<Ticket> Ticket_booked){
-    this.tickets_booked = Ticket_booked;
+   public void setTickets_booked(List<Ticket> ticket_booked){
+    this.tickets_booked = ticket_booked;
    }
 
 }

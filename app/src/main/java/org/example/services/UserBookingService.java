@@ -18,7 +18,7 @@ import java.util.*;
 public class UserBookingService {
     
     private user User;
-    private static final String USER_PATH= "C:\\Users\\ADMIN\\Desktop\\dev\\Ticketbook\\app\\src\\main\\java\\org\\example\\LocalDB\\users.json";
+    private static final String USER_PATH="app/src/main/resources/LocalDB/users.json";
     private List<user> userlists;
     private ObjectMapper objectMapper = new ObjectMapper();
     private boolean loggedStatus;
@@ -28,6 +28,11 @@ public class UserBookingService {
         
          loaduser();
 
+    }
+    public UserBookingService() throws IOException{
+    File users = new File(USER_PATH);
+    System.out.println(users.getAbsolutePath());
+    loaduser();
     }
 
 
@@ -46,16 +51,15 @@ public class UserBookingService {
     }
     public boolean getloggedstatus(){
         return loggedStatus;
+        
     }
 
-    public UserBookingService() throws IOException{
-        loaduser();
-    }
+ 
     public boolean userlogin(){
 
          Optional<user> founduser = userlists.stream().filter(User1-> {
 
-            return User1.getname().equals(User.getname()) && userutilservice.checkpassword(User.getPassword(),User.gethashedpassword());
+            return User1.getname().equals(User.getname()) && userutilservice.checkpassword(User.getPassword(),User.gethashed_password());
 
          }).findFirst();
          return founduser.isPresent();
@@ -80,7 +84,7 @@ public class UserBookingService {
     }
 
     public void fetchticket(){
-      
+        
         User.getticket();
         
     }

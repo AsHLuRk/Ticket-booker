@@ -9,6 +9,7 @@ import java.util.*;
 
 import org.example.entities.Ticket;
 import org.example.entities.user;
+import org.example.services.Trainservices;
 import org.example.services.UserBookingService;
 import org.example.utils.userutilservice;
 
@@ -25,13 +26,15 @@ public class App {
         int Option =0;
     
    
-       UserBookingService userentered=null;
-        try {
-          userentered = new UserBookingService();
-            
-        } catch (IOException e) {
-            System.out.println("There is some Error please Try Again, Sorry for the Inconvinience");
-        }
+       UserBookingService userentered;
+       Trainservices trainservice;
+       try {
+    userentered = new UserBookingService();
+    trainservice= new Trainservices();
+} catch (IOException e) {
+    e.printStackTrace(); // ← change back to this
+    return;
+}
 
         while(Option!=7){
         System.out.println("Choose one of the following to proceed");
@@ -82,8 +85,24 @@ public class App {
             case 3:
                 if(userentered.getloggedstatus()){
                 userentered.fetchticket();
-
+                break;
                 }
+            case 4:
+                scn.nextLine();
+                System.out.println("Enter the Source Station");
+                String source = scn.nextLine();
+                System.out.println("Enter the destination Station");
+                String destination = scn.nextLine();
+        
+                try{
+                trainservice.seleted_trains(source, destination);
+                 }
+                catch(IOException e){
+                e.printStackTrace();
+                 }
+                break;
+            
+                
         }
 
         }

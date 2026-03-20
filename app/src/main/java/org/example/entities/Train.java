@@ -14,6 +14,8 @@ public class Train {
    private List<String> stations; 
 
    private Map<String, String> station_times;
+   private String train_info;
+
 
 //default constructor
    public  Train(){}
@@ -29,10 +31,10 @@ public class Train {
    
    }
 
-   public String getTrainno(){
+   public String getTrain_no(){
      return train_no;
    }
-   public String getTrainid(){
+   public String getTrain_id(){
       return train_id;
    }
    public Date getDatetime(){
@@ -44,27 +46,31 @@ public class Train {
    public List<String> getStations(){
       return stations;
    }
-   public Map<String , String> getStationtime(){
+   public Map<String , String> getStation_times(){
       return station_times;
    }
-   public void setTrainid(String Train_id){
-      this.train_id = Train_id;
+   public void setTrain_id(String train_id){
+      this.train_id = train_id;
    }
-   public void setTrainno(String Train_no){
-      this.train_no = Train_no;
+   public void setTrain_no(String train_no){
+      this.train_no = train_no;
    }
-   public void setDatetime(Date Datetime){
-      this.datetime = Datetime;
+   public void setDatetime(Date datetime){
+      this.datetime = datetime;
    }
-   public void setseats(List<List<Integer>> Seats){
-      this.seats = Seats;
+   public void setseats(List<List<Integer>> seats){
+      this.seats = seats;
    }
-   public void setStations(List<String> Stations){
-      this.stations = Stations;
+   public void setStations(List<String> stations){
+      this.stations = stations;
    }
-   public void setStationsTime(Map<String, String> Station_times){
-     this.station_times = Station_times;
+   public void setStation_times(Map<String, String> station_times){
+     this.station_times = station_times;
    }
+   public String getTrain_info(){ return train_info; }
+
+// add this setter
+public void setTrain_info(String train_info){ this.train_info = train_info; }
 
 }
 

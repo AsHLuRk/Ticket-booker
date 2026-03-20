@@ -1,0 +1,209 @@
+[
+  {
+    "train_id": "RAJ-001",
+    "train_no": "12951",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["Mumbai Central", "Vadodara", "Kota", "New Delhi"],
+    "station_times": {
+      "Mumbai Central": "17:00:00",
+      "Vadodara": "20:15:00",
+      "Kota": "01:30:00",
+      "New Delhi": "08:00:00"
+    },
+    "train_info": "Train ID: RAJ-001 Train No: 12951 | Mumbai Rajdhani Express"
+  },
+  {
+    "train_id": "SHT-002",
+    "train_no": "12009",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["Mumbai Central", "Pune", "Solapur", "Hyderabad"],
+    "station_times": {
+      "Mumbai Central": "06:00:00",
+      "Pune": "07:40:00",
+      "Solapur": "10:25:00",
+      "Hyderabad": "13:45:00"
+    },
+    "train_info": "Train ID: SHT-002 Train No: 12009 | Shatabdi Express"
+  },
+  {
+    "train_id": "DRN-003",
+    "train_no": "12259",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Agra Cantt", "Jhansi", "Bhopal", "Nagpur", "Secunderabad"],
+    "station_times": {
+      "New Delhi": "06:10:00",
+      "Agra Cantt": "08:00:00",
+      "Jhansi": "10:30:00",
+      "Bhopal": "13:00:00",
+      "Nagpur": "17:30:00",
+      "Secunderabad": "06:05:00"
+    },
+    "train_info": "Train ID: DRN-003 Train No: 12259 | Duronto Express"
+  },
+  {
+    "train_id": "GTL-004",
+    "train_no": "12627",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["Bangalore", "Jolarpettai", "Chennai Central"],
+    "station_times": {
+      "Bangalore": "06:00:00",
+      "Jolarpettai": "08:45:00",
+      "Chennai Central": "11:00:00"
+    },
+    "train_info": "Train ID: GTL-004 Train No: 12627 | Karnataka Express"
+  },
+  {
+    "train_id": "KLK-005",
+    "train_no": "12311",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["Howrah", "Dhanbad", "Varanasi", "Allahabad", "Kanpur", "New Delhi"],
+    "station_times": {
+      "Howrah": "19:35:00",
+      "Dhanbad": "23:00:00",
+      "Varanasi": "04:45:00",
+      "Allahabad": "07:00:00",
+      "Kanpur": "09:15:00",
+      "New Delhi": "13:00:00"
+    },
+    "train_info": "Train ID: KLK-005 Train No: 12311 | Kalka Mail Express"
+  },
+
+  {
+    "train_id": "JAI-006",
+    "train_no": "12015",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Gurgaon", "Alwar", "Jaipur"],
+    "station_times": {
+      "New Delhi": "06:05:00",
+      "Gurgaon": "06:45:00",
+      "Alwar": "08:10:00",
+      "Jaipur": "09:40:00"
+    },
+    "train_info": "Train ID: JAI-006 Train No: 12015 | Ajmer Shatabdi Express"
+  },
+  {
+    "train_id": "JAI-007",
+    "train_no": "12413",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Rewari", "Phulera", "Jaipur"],
+    "station_times": {
+      "New Delhi": "15:20:00",
+      "Rewari": "16:55:00",
+      "Phulera": "19:10:00",
+      "Jaipur": "20:25:00"
+    },
+    "train_info": "Train ID: JAI-007 Train No: 12413 | Delhi Jaipur Intercity Express"
+  },
+
+  {
+    "train_id": "PAT-008",
+    "train_no": "12309",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Kanpur", "Allahabad", "Mughal Sarai", "Patna"],
+    "station_times": {
+      "New Delhi": "18:00:00",
+      "Kanpur": "22:15:00",
+      "Allahabad": "01:10:00",
+      "Mughal Sarai": "03:30:00",
+      "Patna": "06:00:00"
+    },
+    "train_info": "Train ID: PAT-008 Train No: 12309 | Rajendra Nagar Rajdhani Express"
+  },
+  {
+    "train_id": "PAT-009",
+    "train_no": "13237",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Aligarh", "Kanpur", "Varanasi", "Patna"],
+    "station_times": {
+      "New Delhi": "08:30:00",
+      "Aligarh": "10:15:00",
+      "Kanpur": "13:40:00",
+      "Varanasi": "19:05:00",
+      "Patna": "23:55:00"
+    },
+    "train_info": "Train ID: PAT-009 Train No: 13237 | Kashi Vishwanath Express"
+  },
+
+  {
+    "train_id": "HDW-010",
+    "train_no": "12017",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Ghaziabad", "Meerut", "Roorkee", "Haridwar"],
+    "station_times": {
+      "New Delhi": "06:50:00",
+      "Ghaziabad": "07:25:00",
+      "Meerut": "08:15:00",
+      "Roorkee": "10:00:00",
+      "Haridwar": "10:45:00"
+    },
+    "train_info": "Train ID: HDW-010 Train No: 12017 | Dehradun Shatabdi Express"
+  },
+  {
+    "train_id": "HDW-011",
+    "train_no": "14041",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stations": ["New Delhi", "Meerut", "Muzaffarnagar", "Haridwar"],
+    "station_times": {
+      "New Delhi": "22:40:00",
+      "Meerut": "23:55:00",
+      "Muzaffarnagar": "01:10:00",
+      "Haridwar": "03:15:00"
+    },
+    "train_info": "Train ID: HDW-011 Train No: 14041 | Mussoorie Express"
+  }
+]
