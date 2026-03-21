@@ -1,6 +1,6 @@
 package org.example.entities;
 import java.util.*;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Ticket {
 
     private String ticket_id;
@@ -33,6 +33,7 @@ public class Ticket {
     public String getTicket_info(){ return ticket_info; }
 
     // this is your existing method — keep it
+    @JsonIgnore  
     public String getTicket(){ return ticket_info; }
 
     // Setters — names must match JSON fields exactly

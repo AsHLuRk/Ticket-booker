@@ -58,6 +58,8 @@ public class UserBookingService {
  
     public boolean userlogin(){
 
+         if(User==null) return false;
+
          Optional<user> founduser = userlists.stream().filter(User1-> {
 
             return User1.getname().equals(User.getname()) && userutilservice.checkpassword(User.getPassword(),User1.gethashed_password());
