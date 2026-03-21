@@ -8,10 +8,20 @@ public class Ticket {
     private String source;
     private String destination;
     private String date_of_travel;  // String, not Date — avoids parsing issues
-    private Train train;
     private String ticket_info;
 
     public Ticket(){} // ← Jackson needs this
+
+    public Ticket(String ticket_id, String user_id, String source, String destination,String date_of_travel, String ticket_info){
+
+        this.ticket_id = ticket_id;
+        this.user_id = user_id;
+        this.source = source;
+        this.destination = destination;
+        this.date_of_travel = date_of_travel;
+      
+        this.ticket_info = ticket_info;
+    }
 
     // Getters
     public String getTicket_id(){ return ticket_id; }
@@ -19,7 +29,7 @@ public class Ticket {
     public String getSource(){ return source; }
     public String getDestination(){ return destination; }
     public String getDate_of_travel(){ return date_of_travel; }
-    public Train getTrain(){ return train; }
+   
     public String getTicket_info(){ return ticket_info; }
 
     // this is your existing method — keep it
@@ -31,6 +41,6 @@ public class Ticket {
     public void setSource(String source){ this.source = source; }
     public void setDestination(String destination){ this.destination = destination; }
     public void setDate_of_travel(String date_of_travel){ this.date_of_travel = date_of_travel; }
-    public void setTrain(Train train){ this.train = train; }
+
     public void setTicket_info(String ticket_info){ this.ticket_info = ticket_info; }
 }

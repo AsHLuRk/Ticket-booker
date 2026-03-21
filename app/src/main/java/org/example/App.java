@@ -85,8 +85,8 @@ public class App {
             case 3:
                 if(userentered.getloggedstatus()){
                 userentered.fetchticket();
-                break;
                 }
+                  break;
             case 4:
                 scn.nextLine();
                 System.out.println("Enter the Source Station");
@@ -95,13 +95,29 @@ public class App {
                 String destination = scn.nextLine();
         
                 try{
-                trainservice.seleted_trains(source, destination);
+                trainservice.seleted_trains(source, destination, scn);
                  }
                 catch(IOException e){
                 e.printStackTrace();
                  }
                 break;
             
+            case 5:
+               userentered.bookticket(trainservice, scn);
+                break;
+            
+            case 6:
+                System.out.println("Enter the ticket id: ");
+                String Ticket_id = scn.next();
+                try{
+                userentered.Cancelticket(Ticket_id);
+                }
+                catch(IOException e){
+                e.printStackTrace();
+                }
+                break;
+            case 7:
+                Option = 7;
                 
         }
 

@@ -18,7 +18,7 @@ public class Trainservices {
     Train train = new Train();
     List<Train> trainlist = new ArrayList<>();
   ObjectMapper objectMapper = new ObjectMapper();
- Scanner scn = new Scanner(System.in);
+ 
 
 
 
@@ -47,7 +47,7 @@ loadtrains();
 trainlist = objectMapper.readValue(Trains, new TypeReference<List<Train>>() {});
     }
 
-public void seleted_trains(String a, String b) throws IOException{
+public void seleted_trains(String a, String b , Scanner scn) throws IOException{
         List<Train> selected_Trains = SearchTrain(a, b);
         for(int i=0; i<selected_Trains.size(); i++){
             System.out.println(selected_Trains.get(i).getTrain_info());
@@ -56,23 +56,34 @@ public void seleted_trains(String a, String b) throws IOException{
         
         System.out.println("Press 1, If you Want to see available Seats");
         int x = scn.nextInt();
+        System.out.println("Enter the train number: ");
+        String train_no = scn.next();
         if(x==1){
-            checkseats(selected_Trains);
+            checkseats(selected_Trains, train_no);
         }
         
     }
 
-    public int checkseats(List<Train> n1 ){
+    public String get_train_info(String train_no){
+        
+       
+            Train s = trainlist.stream().filter(e->e.getTrain_no().equals(train_no)).findFirst().orElse(null);
+           
+         
+            return s.getTrain_info();
+         }
       
-       System.out.println("Enter the Train Number: ");
-       String train_no = scn.next();
+    
 
-       List<Train> dest_train= n1.stream().filter(e-> e.getTrain_no().equals(train_no)).collect(Collectors.toList());
+    public int checkseats(List<Train> n1, String train_no ){
+      
 
-        int count =0;
-      for(int i=0 ; i<dest_train.get(0).getseats().size(); i++){
-          count +=  dest_train.get(0).getseats().get(i).stream().filter(e-> e==0).count();
-      }
+       Train dest_train= n1.stream().filter(e-> e.getTrain_no().equals(train_no)).findFirst().orElse(null);;
+       int count =0;
+        for(List<Integer> row : dest_train.getseats()){
+        count += row.stream().filter(e -> e == 0).count();
+    }
+      
       System.out.println("The number of Available Seats is : "+count);
       return count;
        }

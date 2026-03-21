@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.entities.Ticket;
+import org.example.entities.Train;
 import org.example.entities.user;
 import org.example.utils.userutilservice;
 
@@ -42,7 +43,7 @@ public class UserBookingService {
         return  userlists = objectMapper.readValue(users, new TypeReference<List<user>>() {});
     }
     public void returnuser(String name1, String password1){
-        user usernew = userlists.stream().filter(e->e.getname().equals(name1)&& e.getPassword().equals(password1)).findFirst().orElse(null);
+        user usernew = userlists.stream().filter(e->e.getname().equals(name1)&& userutilservice.checkpassword(password1, e.gethashed_password())).findFirst().orElse(null);
         this.User = usernew;
        
     }
@@ -59,7 +60,7 @@ public class UserBookingService {
 
          Optional<user> founduser = userlists.stream().filter(User1-> {
 
-            return User1.getname().equals(User.getname()) && userutilservice.checkpassword(User.getPassword(),User.gethashed_password());
+            return User1.getname().equals(User.getname()) && userutilservice.checkpassword(User.getPassword(),User1.gethashed_password());
 
          }).findFirst();
          return founduser.isPresent();
@@ -88,7 +89,59 @@ public class UserBookingService {
         User.getticket();
         
     }
-    
+    public void bookticket( Trainservices trainservice, Scanner scn){
+
+        
+        scn.nextLine();
+        System.out.println("Enter the Source Station");
+        String source = scn.nextLine();
+        System.out.println("Enter the destination Station");
+        String destination = scn.nextLine();
+        System.out.println("Enter the Date of Travel");
+        String date_of_travel = scn.nextLine();
+        System.out.println("Enter the Train Number: ");
+        String train_no = scn.next();
+        try{
+        List<Train> trains = trainservice.SearchTrain(source , destination);
+        int a =  trainservice.checkseats(trains, train_no);
+        System.out.println("Number of Seats Availabl: "+a);
+        System.out.println("Press 1 to proceed");
+        int x = scn.nextInt();
+        String s = trainservice.get_train_info(train_no);
+        
+        if(a>0){
+            if(x==1){
+        Ticket newTicket = new Ticket(UUID.randomUUID().toString(), User.getUser_id(),source, destination, date_of_travel ,  s);
+        
+          confirmticket(newTicket);
+
+
+
+            }
+        }
+        else{
+            System.out.println("Ticket is not Available");
+        }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void confirmticket(Ticket newTicket){
+
+        User.getTickets_booked().add(newTicket);
+        try{
+
+        userlists.stream().filter(e-> e.getUser_id().equals(User.getUser_id())).findFirst().ifPresent(e->e.setTickets_booked(User.getTickets_booked()));
+        saveuserlisttofile();
+        System.out.println("Ticket Has Been Booked Successfully");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
     public void Cancelticket(String Ticket_id) throws IOException{
 
         File data = new File(USER_PATH);
@@ -106,7 +159,7 @@ public class UserBookingService {
                 
                 while(it.hasNext()){
                     JsonNode ticket = it.next();
-                    if(ticket.get("Ticket_id").asText().equals(Ticket_id)){
+                    if(ticket.get("ticket_id").asText().equals(Ticket_id)){
                         found = true;
                         it.remove();
                         break;
