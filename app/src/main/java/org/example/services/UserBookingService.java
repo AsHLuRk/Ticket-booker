@@ -176,6 +176,14 @@ public class UserBookingService {
         }
         if(found){
         objectMapper.writeValue(data, nodeobj);
+        User.getTickets_booked().removeIf(t -> t.getTicket_id().equals(Ticket_id));
+        userlists.stream()
+            .filter(e -> e.getUser_id().equals(User.getUser_id()))
+            .findFirst()
+            .ifPresent(e -> e.setTickets_booked(User.getTickets_booked()));
+        loaduser();
+        
+        
         System.out.println("Ticket has been cancelled succesfully");
         }
 

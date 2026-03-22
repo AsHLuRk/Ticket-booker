@@ -53,7 +53,10 @@ public class user {
     }
 
     public void getticket(){
-     
+        if(tickets_booked==null){
+        System.out.println("No bookings Available");
+        return;
+        }
      for(int i =0; i<tickets_booked.size(); i++){
          System.out.println(tickets_booked.get(i).getTicket());
          

@@ -103,7 +103,12 @@ public class App {
                 break;
             
             case 5:
+                if(userentered.getloggedstatus()){
                userentered.bookticket(trainservice, scn);
+                }
+                else{
+                    System.out.println("Please Login First :)");
+                }
                 break;
             
             case 6:

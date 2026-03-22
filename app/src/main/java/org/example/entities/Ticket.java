@@ -34,7 +34,7 @@ public class Ticket {
 
     // this is your existing method — keep it
     @JsonIgnore  
-    public String getTicket(){ return ticket_info; }
+    public String getTicket(){ return ticket_info +" Train_id: "+ticket_id; }
 
     // Setters — names must match JSON fields exactly
     public void setTicket_id(String ticket_id){ this.ticket_id = ticket_id; }
