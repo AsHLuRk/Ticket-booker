@@ -129,7 +129,7 @@ public class UserBookingService {
             e.printStackTrace();
         }
     }
-    public void confirmticket(Ticket newTicket){
+    public boolean confirmticket(Ticket newTicket){
 
         User.getTickets_booked().add(newTicket);
         try{
@@ -137,10 +137,14 @@ public class UserBookingService {
         userlists.stream().filter(e-> e.getUser_id().equals(User.getUser_id())).findFirst().ifPresent(e->e.setTickets_booked(User.getTickets_booked()));
         saveuserlisttofile();
         System.out.println("Ticket Has Been Booked Successfully");
+        return true;
         }
+       
+
         catch(Exception e){
             e.printStackTrace();
         }
+        return false;
     }
 
 
